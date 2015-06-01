@@ -27,7 +27,7 @@ get('/recipe/:id') do
 end
 
 post('/recipe_add_ing/') do
-  @recipe = Recipe.find(params.fetch('id').to_i())
+  @recipe = Recipe.find(params.fetch('recipe_id').to_i())
   @ingredient = Ingredient.create({:ingredient_name => params.fetch('ingredient_name'), :recipe_id => @recipe.id})
   # @ingredients = @recipe.ingredients()
   @recipes = Recipe.all()
