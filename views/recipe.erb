@@ -1,0 +1,31 @@
+<h1>Recipe:  <%=@recipe.recipe_name()%></h1>
+<p>Source:  <%=@recipe.source()%></p
+<p>Servings:  <%=@recipe.servings()%></p>
+<p>Comment:  <%=@recipe.comment()%></p>
+<br /><br />
+
+<h3>Ingredients</h3>
+
+<% if @ingredients.any?() %>
+  <% @ingredients.each() do |ingredient| %>
+    <ul>
+        <li><a href='/ingredient/<%=ingredient.id()%>'> <%=ingredient.ingredient_name()%></a></li>
+    </ul>
+  <%end%>
+<%else %>
+  <p>You have no ingredients!</p>
+<%end%>
+
+<h3>Add an Ingredient</h3>
+
+<form action='/recipe_add_ing/' method='post'>
+  <input type='hidden' name='recipe_id'  value=<%= @recipe.id %>
+  <div class='form-group'>
+    <label for='ingredient_name'>Ingredient:</label>
+    <input id='ingredient_name' name='ingredient_name' type='text'>
+    <button type='submit' class='btn btn-info'>Add Ingredient</button>
+  </div>
+</form>
+
+<p>Ingredient Update</p>
+<p>Indredient Delete</p>
