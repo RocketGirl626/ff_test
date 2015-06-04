@@ -4,28 +4,100 @@
 <p>Comment:  <%=@recipe.comment()%></p>
 <br /><br />
 
-<h3>Ingredients</h3>
+<h4>Update <%=@recipe.recipe_name() %> </h4>
 
-<% if @ingredients.any?() %>
-  <% @ingredients.each() do |ingredient| %>
-    <ul>
-        <li><a href='/ingredient/<%=ingredient.id()%>'> <%=ingredient.ingredient_name()%></a></li>
-    </ul>
-  <%end%>
-<%else %>
-  <p>You have no ingredients!</p>
-<%end%>
-
-<h3>Add an Ingredient</h3>
-
-<form action='/recipe_add_ing/' method='post'>
-  <input type='hidden' name='recipe_id'  value=<%= @recipe.id %>
-  <div class='form-group'>
-    <label for='ingredient_name'>Ingredient:</label>
-    <input id='ingredient_name' name='ingredient_name' type='text'>
-    <button type='submit' class='btn btn-info'>Add Ingredient</button>
+<form action="/recipe_name_update/ <%= @recipe.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <div class="form-group">
+    <label for="recipe_name">Update Recipe Name:</label>
+    <input id="recipe_name" name="recipe_name" type="text">
+    <button type="submit" class="btn btn-info">Update Recipe Name</button>
   </div>
 </form>
 
-<p>Ingredient Update</p>
-<p>Indredient Delete</p>
+<form action="/recipe_source_update/ <%= @recipe.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <div class="form-group">
+    <label for="source">Update Recipe Source:</label>
+    <input id="source" name="source" type="text">
+    <button type="submit" class="btn btn-info">Update Recipe Source</button>
+  </div>
+</form>
+
+<form action="/recipe_servings_update/ <%= @recipe.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <div class="form-group">
+    <label for="servings">Update Recipe Servings:</label>
+    <input id="servings" name="servings" type="text">
+    <button type="submit" class="btn btn-info">Update Recipe Servings</button>
+  </div>
+</form>
+
+<form action="/recipe_comment_update/ <%= @recipe.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <div class="form-group">
+    <label for="comment">Update Recipe Comment:</label>
+    <input id="comment" name="comment" type="text">
+    <button type="submit" class="btn btn-info">Update Recipe Comment</button>
+  </div>
+</form>
+
+<h3>Ingredients</h3>
+<div>
+  <% if @ingredients.any?() %>
+    <% @ingredients.each() do |ingredient| %>
+      <ul>
+        <li><a href='/ingredient/<%=@recipe_id%>'> <%=ingredient.ingredient_name()%></a></li>
+      </ul>
+    <%end%>
+  <%else %>
+    <p>You have no ingredients!</p>
+  <%end%>
+
+
+
+  <h3>Add an Ingredient</h3>
+
+  <form action='/recipe_add_ing/' method='post'>
+    <input type='hidden' name='recipe_id'  value=<%= @recipe.id %>
+    <div class='form-group'>
+      <label for='ingredient_name'>Ingredient:</label>
+      <input id='ingredient_name' name='ingredient_name' type='text'>
+      <button type='submit' class='btn btn-info'>Add Ingredient</button>
+    </div>
+  </form>
+
+  <p>Ingredient Update</p>
+  <p>Indredient Delete</p>
+
+  <h3>Instructions</h3>
+
+  <% if @instructions.any?() %>
+    <% @instructions.each() do |instruction| %>
+      <ul>
+        <li><a href='/instruction/<%=@recipe_id%>'> <%=instruction.instruction_name()%></a></li>
+      </ul>
+    <%end%>
+  <%else %>
+    <p>You have no instructions!</p>
+  <%end%>
+
+
+
+  <h3>Add an Instruction</h3>
+
+  <form action='/recipe_add_ins/' method='post'>
+    <input type='hidden' name='recipe_id'  value=<%= @recipe.id %>
+    <div class='form-group'>
+      <label for='instruction_name'>Instruction:</label>
+      <input id='instruction_name' name='instruction_name' type='text'>
+      <button type='submit' class='btn btn-info'>Add Instruction</button>
+    </div>
+  </form>
+
+  <p>Instruction Update</p>
+  <p>Instruction Delete</p>
+
+  <a href='/'>Go to Recipe Add</a>
+
+</div>
