@@ -62,14 +62,16 @@ end
 
 post('/recipe_add_ing/') do
   @recipe = Recipe.find(params.fetch('recipe_id').to_i())
-  @ingredient = Ingredient.create({:ingredient_name => params.fetch('ingredient_name'), :recipe_id => @recipe.id})
-  redirect("/recipe/".concat(@recipe.id().to_s()))
+  @ingredient = Ingredient.create({:ingredient_name => params.fetch('ingredient_name'), :recipe_id => @recipe.id, :id => nil})
+  redirect("/recipe/#{@recipe.id}")
 end
 
 get('/ingredient/:id') do
   @ingredient = Ingredient.find(params.fetch('id'))
   erb(:ingredient)
 end
+
+# patch for ingredient update goes here
 
 post('/recipe_add_ins/') do
   @recipe = Recipe.find(params.fetch('recipe_id').to_i())

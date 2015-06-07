@@ -47,14 +47,12 @@
   <% if @ingredients.any?() %>
     <% @ingredients.each() do |ingredient| %>
       <ul>
-        <li><a href='/ingredient/<%=@recipe_id%>'> <%=ingredient.ingredient_name()%></a></li>
+        <li><a href='/ingredient/<%=ingredient.id()%>'> <%=ingredient.ingredient_name()%></a></li>
       </ul>
     <%end%>
   <%else %>
     <p>You have no ingredients!</p>
   <%end%>
-
-
 
   <h3>Add an Ingredient</h3>
 
