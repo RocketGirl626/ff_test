@@ -1,0 +1,39 @@
+<h1>All Images</h1>
+
+<% if @images.any?() %>
+<% @images.each() do |image| %>
+  <ul>
+      <li><a href='/image/<%=image.id()%>'> <%=image.image_name()%></a></li>
+  </ul>
+    <%end%>
+<%else %>
+  <p> You have no images!</p>
+<%end%>
+
+<br />
+
+<h3></h3>
+
+<form action='/image_add' method='post'>
+  <div class='form-group'>
+    <label for='image_name'>Image Name:</label>
+    <input id='image_name' name='image_name' type='text'>
+  </div>
+  <div class='form-group'>
+    <label for='url'>Image URL:</label>
+    <input id='url' name='url' type='text'>
+  </div>
+  <div class='form-group'>
+    <label for='alt'>Alt Tag:</label>
+    <input id='alt' name='alt' type='text'>
+  </div>
+  <div class='form-group'>
+    <label for='width'>Width:</label>
+    <input id='width' name='width' type='text'>
+  </div>
+  <div class='form-group'>
+    <label for='height'>Height:</label>
+    <input id='height' name='height' type='text'>
+  </div>
+  <button type='submit' class='btn btn-info'>Add Image</button>
+</form>

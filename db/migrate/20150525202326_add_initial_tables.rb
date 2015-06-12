@@ -32,4 +32,3 @@ class AddInitialTables < ActiveRecord::Migration
     end
   end
 end
-  

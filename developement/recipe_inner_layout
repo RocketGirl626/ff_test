@@ -1,0 +1,59 @@
+<div class="span10">
+			      		<!--page content-->
+
+				      	<h1 class="indent"> Classic Lemon Curd</h1>
+			      		<div class="recipe-img"><img src="img/dessert_lemoncurd.jpg" alt="classic lemon curd"></div>
+
+
+		      			<ul class="recipe-data">
+		      				<li><span class="recipe-data-header">Serves:</span>  Makes 2 cups</li>
+		      				<li><span class="recipe-data-header">Source:</span>  Fine Dining, April 2009</li>
+		      				<li><a href="dessert_lemoncurd_print.html"><img src="img/printer_icon.gif" width="25px" height="25px" alt="print this recipe"></a></li>
+		      			</ul>
+
+		      			<p class="recipe-comment">
+		      				Made by gently cooking a mixture of fresh lemon juice, sugar, butter, and eggs until thickened, lemon curd is
+				    		also divine on buttered toast, a simple and perfect way to appreciate the curd's cool, satiny texture. It
+				    		makes an easy and delicious filling for tarts, cakes, and cookies. And a dollop of lemon curd tastes delicious
+				    		with a piece of gingerbread or a slice of pound cake; its tart lemon flavor counters the spiciness of the former
+				    		and the sweet richness of the latter. Pair it with a piece of thick Scottish shortbread and you'll appreciate
+				    		how lemon curd can transform a simple, somewhat homely cookie into something wonderful.
+		      			</p>
+
+
+			      		<div id="recipe-container">
+
+			      			<h2>Ingredients</h2>
+			      			<ul class="recipe-ingredients">
+			      				<li>3 oz. (6 Tbs.) unsalted butter, softened at room temperature</li>
+			      				<li>1 cup sugar</li>
+			      				<li>2 large eggs</li>
+			      				<li>2 large egg yolks</li>
+			      				<li>2/3 cup fresh lemon juice</li>
+			      				<li>1 teaspoon grated lemon zest</li>
+			      			</ul>
+
+			      			<h2>Instructions</h2>
+			      			<p>
+			      				In a large bowl, beat the butter and sugar with an electric mixer, about 2 min. Slowly add the eggs
+			      				and yolks. Beat for 1 min. Mix in the lemon juice. The mixture will look curdled, but it will smooth
+			      				out as it cooks.
+			      			</p>
+			      			<p>
+			      				In a medium, heavy-based saucepan, cook the mixture over low heat until it looks smooth. (The curdled
+			      				appearance disappears as the butter in the mixture melts.) Increase the heat to medium and cook, stirring
+			      				constantly, until the mixture thickens, about 15 minutes. It should leave a path on the back of a spoon
+			      				and will read 170Â°F on a thermometer. Don't let the mixture boil.
+			      			</p>
+			      			<p>
+			      				Remove the curd from the heat; stir in the lemon zest. Transfer the curd to a bowl. Press plastic
+			      				wrap on the surface of the lemon curd to keep a skin from forming and chill the curd in the refrigerator.
+			      				The curd will thicken further as it cools. Covered tightly, it will keep in the refrigerator for a week
+			      				and in the freezer for 2 months.
+			      			</p>
+			      			<p>
+			      				<strong>Note:</strong> For lime curd, substitute fresh lime juice and zest for lemon.
+			      			</p>
+			      		</div> <!--recipe-container-->
+		      		</div> <!--span10-->
+		 		</div> <!--row-fluid-->

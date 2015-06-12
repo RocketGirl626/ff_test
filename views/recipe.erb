@@ -42,19 +42,63 @@
   </div>
 </form>
 
-<h3>Ingredients</h3>
+<br /><br />
+
+<h3>Recipe Image</h3>
+
+<% if @images.any?() %>
+  <% @images.each() do |image| %>
+    <ul>
+      <img src='<%=image.url%>'>
+    </ul>
+  <%end%>
+<%else %>
+  <p>You have no ingredients!</p>
+<%end%>
+
+<br />
+
+<h3>Add an Image</h3>
 <div>
+<form action='/recipe_add_img/' method='post'>
+  <input type='hidden' name='recipe_id'  value=<%= @recipe.id %>
+  <div class='form-group'>
+    <label for='image_name'>Image Name:</label>
+    <input id='image_name' name='image_name' type='text'>
+  </div>
+  <div class='form-group'>
+    <label for='url'>Image URL:</label>
+    <input id='url' name='url' type='text'>
+  </div>
+  <div class='form-group'>
+    <label for='alt'>Alt Tag:</label>
+    <input id='alt' name='alt' type='text'>
+  </div>
+  <div class='form-group'>
+    <label for='width'>Width:</label>
+    <input id='width' name='width' type='text'>
+  </div>
+  <div class='form-group'>
+    <label for='height'>Height:</label>
+    <input id='height' name='height' type='text'>
+  </div>
+  <button type='submit' class='btn btn-info'>Add Image</button>
+</form>
+
+<h3>Ingredients</h3>
   <% if @ingredients.any?() %>
     <% @ingredients.each() do |ingredient| %>
       <ul>
-        <li><a href='/ingredient/<%=ingredient.id()%>'> <%=ingredient.ingredient_name()%></a></li>
+        <li><a href='/ingredient/<%=ingredient.id%>'> <%=ingredient.ingredient_name%></a></li>
       </ul>
     <%end%>
   <%else %>
     <p>You have no ingredients!</p>
   <%end%>
 
-  <h3>Add an Ingredient</h3>
+  <br />
+
+  <h4>Add an Ingredient:</h4>
 
   <form action='/recipe_add_ing/' method='post'>
     <input type='hidden' name='recipe_id'  value=<%= @recipe.id %>
@@ -65,24 +109,23 @@
     </div>
   </form>
 
-  <p>Ingredient Update</p>
-  <p>Indredient Delete</p>
-
+  <br /><br />
+  <div>
   <h3>Instructions</h3>
 
   <% if @instructions.any?() %>
     <% @instructions.each() do |instruction| %>
       <ul>
-        <li><a href='/instruction/<%=@recipe_id%>'> <%=instruction.instruction_name()%></a></li>
+        <li><a href='/instruction/<%=instruction.id%>'> <%=instruction.instruction_name%></a></li>
       </ul>
     <%end%>
   <%else %>
     <p>You have no instructions!</p>
   <%end%>
 
+  <br />
 
-
-  <h3>Add an Instruction</h3>
+  <h4>Add an Instruction:</h4>
 
   <form action='/recipe_add_ins/' method='post'>
     <input type='hidden' name='recipe_id'  value=<%= @recipe.id %>
@@ -92,9 +135,7 @@
       <button type='submit' class='btn btn-info'>Add Instruction</button>
     </div>
   </form>
-
-  <p>Instruction Update</p>
-  <p>Instruction Delete</p>
+</div>
 
   <a href='/'>Go to Recipe Add</a>
 
