@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Friends and Family Test</title>
+	<head>
+		<title>Friends and Family</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-  </head>
-  <body>
-    <div class="container">
-      <%= yield %>
+		<link href="/styles.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery-1.1.11.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="container-banner">
+
+
+					<div id="col1">
+						<ul class="navlist">
+							<li><a class="class1" href="recipes.html">:recipes</a></li>
+							<li><a class="class1" href="menus.html">:menus</a></li>
+						</ul>
+
+					</div>
+					<div id="col2">
+						<a href="index.html"><img src="/logo.gif" alt="friends & family"></a>
+					</div>
+					<div id="col3">
+						<ul class="navlist">
+							<li><a class="class1" href="fandf.html">:f+f</a></li>
+							<li><a class="class1" href="places.html">:places</a></li>
+						</ul>
+					</div>
+			</div>
+
+			
+            <div class="container">
+              <%= yield %>
+            </div>
+          </div> <!--row-fluid-->
+        </div> <!--container-fluid-->
+      </div>
+      <img src="/footer.gif">
     </div>
   </body>
 </html>

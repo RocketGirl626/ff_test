@@ -1,8 +1,10 @@
+
+
 <div class="span10">
 			      		<!--page content-->
 
 				      	<h1 class="indent"> Classic Lemon Curd</h1>
-			      		<div class="recipe-img"><img src="img/dessert_lemoncurd.jpg" alt="classic lemon curd"></div>
+			      		<div class="recipe-img"><img src="dessert_lemoncurd.jpg" alt="classic lemon curd"></div>
 
 
 		      			<ul class="recipe-data">

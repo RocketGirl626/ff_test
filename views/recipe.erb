@@ -4,6 +4,10 @@
 <p>Comment:  <%=@recipe.comment()%></p>
 <br /><br />
 
+<form action='/recipe_ready/<%=@recipe.id%>' method='get'>
+  <button type='submit' class="btn btn-info">Publish Recipe</button>
+</form>
+
 <h4>Update <%=@recipe.recipe_name() %> </h4>
 
 <form action="/recipe_name_update/ <%= @recipe.id() %>" method="post">

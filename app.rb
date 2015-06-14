@@ -129,3 +129,11 @@ delete('/instruction/:id') do
   @recipes = Recipe.all
   redirect("/recipe/#{@instruction.recipe_id}")
 end
+
+get('/recipe_ready/:id') do
+  @recipe = Recipe.find(params.fetch('id'))
+  @ingredients = @recipe.ingredients
+  @instructions = @recipe.instructions
+  @images = @recipe.images
+  erb(:recipe_ready)
+end

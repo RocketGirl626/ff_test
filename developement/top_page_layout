@@ -5,8 +5,8 @@
 		<title>Friends and Family</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
 		<link href="/styles.css" rel="stylesheet" type="text/css">
-		<script src="js/jquery-1.1.11.2.js"></script>
-    	<script src="js/bootstrap.js"></script>
+		<script src="js/jquery-1.1.11.3.js"></script>
+    <script src="js/bootstrap.js"></script>
 	</head>
 
 	<body>
@@ -31,49 +31,3 @@
 						</ul>
 					</div>
 			</div>
-
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="span2">
-			      		<!--sidebar content-->
-			      		<img src="img/recipes_header.gif" alt="the recipes"><br />
-			      		<ul>
-							<a href="menus.html"><li class="menu-title">MEALS</li></a>
-							<ul>
-								<a href="recipes.html" class="class1"><li class="menu-item">all</li></a>
-								<a href="meat.html"><li class="menu-item">mains</li></a>
-								<a href="breakfast.html"><li class="menu-item">brunch</li></a>
-								<a href="healthy.html"><li class="menu-item">healthy</li></a><br /><br />
-							</ul>
-							<a href="menus.html"><li class="menu-title">COURSES</li></a>
-							<ul>
-								<a href="index.html"><li class="menu-item">starters</li></a>
-								<a href="index.html"><li class="menu-item">drinks</li></a>
-								<a href="index.html"><li class="menu-item">soups</li></a>
-								<a href="index.html"><li class="menu-item">salads</li></a>
-								<a href="meat.html"><li class="menu-item">meats</li></a>
-								<a href="chicken.html"><li class="menu-item">poultry</li></a>
-								<a href="chicken.html"><li class="menu-item">fish</li></a>
-								<a href="index.html"><li class="menu-item">sandwiches</li></a>
-								<a href="index.html"><li class="menu-item">breads</li></a>
-								<a href="index.html"><li class="menu-item">sides</li></a>
-								<a href="index.html"><li class="menu-item">sauces</li></a>
-								<a href="index.html"><li class="menu-item">desserts</li></a>
-								<br /><br />
-							</ul>
-							<a href="menus.html"><li class="menu-title">ETHNICITY</li></a>
-							<ul>
-								<a href="index.html"><li class="menu-item">french</li></a>
-								<a href="index.html"><li class="menu-item">italian</li></a>
-								<a href="index.html"><li class="menu-item">mexican</li></a>
-								<a href="index.html"><li class="menu-item">asian</li></a><br /><br />
-							</ul>
-							<a href="menus.html"><li class="menu-title">SEASONS</li></a>
-							<ul>
-								<a href="index.html"><li class="menu-item">spring</li></a>
-								<a href="index.html"><li class="menu-item">summer</li></a>
-								<a href="index.html"><li class="menu-item">autumn</li></a>
-								<a href="index.html"><li class="menu-item">winter</li></a><br /><br />
-							</ul>
-						</ul>
-			    	</div> <!--span2-->
