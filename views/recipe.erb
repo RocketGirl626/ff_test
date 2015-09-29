@@ -5,7 +5,7 @@
 <br /><br />
 
 <form action='/recipe_ready/<%=@recipe.id%>' method='get'>
-  <button type='submit' class="btn btn-info">Publish Recipe</button>
+  <button type='submit' class="btn btn-default">Publish Recipe</button>
 </form>
 
 <h4>Update <%=@recipe.recipe_name() %> </h4>
@@ -15,7 +15,7 @@
   <div class="form-group">
     <label for="recipe_name">Update Recipe Name:</label>
     <input id="recipe_name" name="recipe_name" type="text">
-    <button type="submit" class="btn btn-info">Update Recipe Name</button>
+    <button type="submit" class="btn btn-default">Update Recipe Name</button>
   </div>
 </form>
 
@@ -24,7 +24,7 @@
   <div class="form-group">
     <label for="source">Update Recipe Source:</label>
     <input id="source" name="source" type="text">
-    <button type="submit" class="btn btn-info">Update Recipe Source</button>
+    <button type="submit" class="btn btn-default">Update Recipe Source</button>
   </div>
 </form>
 
@@ -33,7 +33,7 @@
   <div class="form-group">
     <label for="servings">Update Recipe Servings:</label>
     <input id="servings" name="servings" type="text">
-    <button type="submit" class="btn btn-info">Update Recipe Servings</button>
+    <button type="submit" class="btn btn-default">Update Recipe Servings</button>
   </div>
 </form>
 
@@ -42,7 +42,7 @@
   <div class="form-group">
     <label for="comment">Update Recipe Comment:</label>
     <input id="comment" name="comment" type="text">
-    <button type="submit" class="btn btn-info">Update Recipe Comment</button>
+    <button type="submit" class="btn btn-default">Update Recipe Comment</button>
   </div>
 </form>
 
@@ -53,11 +53,11 @@
 <% if @images.any?() %>
   <% @images.each() do |image| %>
     <ul>
-      <img src='<%=image.url%>'>
+      <img src='<%=image.url%>' width='<%=image.width%>'>
     </ul>
   <%end%>
 <%else %>
-  <p>You have no ingredients!</p>
+  <p>You have no image!</p>
 <%end%>
 
 <br />
@@ -86,7 +86,7 @@
     <label for='height'>Height:</label>
     <input id='height' name='height' type='text'>
   </div>
-  <button type='submit' class='btn btn-info'>Add Image</button>
+  <button type='submit' class='btn btn-default'>Add Image</button>
 </form>
 
 <h3>Ingredients</h3>
@@ -109,7 +109,7 @@
     <div class='form-group'>
       <label for='ingredient_name'>Ingredient:</label>
       <input id='ingredient_name' name='ingredient_name' type='text'>
-      <button type='submit' class='btn btn-info'>Add Ingredient</button>
+      <button type='submit' class='btn btn-default'>Add Ingredient</button>
     </div>
   </form>
 
@@ -136,7 +136,7 @@
     <div class='form-group'>
       <label for='instruction_name'>Instruction:</label>
       <input id='instruction_name' name='instruction_name' type='text'>
-      <button type='submit' class='btn btn-info'>Add Instruction</button>
+      <button type='submit' class='btn btn-default'>Add Instruction</button>
     </div>
   </form>
 </div>

@@ -1,67 +1,23 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span2">
-          <!--sidebar content-->
-          <img src="/recipes_header.gif" alt="the recipes"><br />
-          <ul>
-        <a href="menus.html"><li class="menu-title">MEALS</li></a>
-        <ul>
-          <a href="recipes.html" class="class1"><li class="menu-item">all</li></a>
-          <a href="meat.html"><li class="menu-item">mains</li></a>
-          <a href="breakfast.html"><li class="menu-item">brunch</li></a>
-          <a href="healthy.html"><li class="menu-item">healthy</li></a><br /><br />
-        </ul>
-        <a href="menus.html"><li class="menu-title">COURSES</li></a>
-        <ul>
-          <a href="index.html"><li class="menu-item">starters</li></a>
-          <a href="index.html"><li class="menu-item">drinks</li></a>
-          <a href="index.html"><li class="menu-item">soups</li></a>
-          <a href="index.html"><li class="menu-item">salads</li></a>
-          <a href="meat.html"><li class="menu-item">meats</li></a>
-          <a href="chicken.html"><li class="menu-item">poultry</li></a>
-          <a href="chicken.html"><li class="menu-item">fish</li></a>
-          <a href="index.html"><li class="menu-item">sandwiches</li></a>
-          <a href="index.html"><li class="menu-item">breads</li></a>
-          <a href="index.html"><li class="menu-item">sides</li></a>
-          <a href="index.html"><li class="menu-item">sauces</li></a>
-          <a href="index.html"><li class="menu-item">desserts</li></a>
-          <br /><br />
-        </ul>
-        <a href="menus.html"><li class="menu-title">ETHNICITY</li></a>
-        <ul>
-          <a href="index.html"><li class="menu-item">french</li></a>
-          <a href="index.html"><li class="menu-item">italian</li></a>
-          <a href="index.html"><li class="menu-item">mexican</li></a>
-          <a href="index.html"><li class="menu-item">asian</li></a><br /><br />
-        </ul>
-        <a href="menus.html"><li class="menu-title">SEASONS</li></a>
-        <ul>
-          <a href="index.html"><li class="menu-item">spring</li></a>
-          <a href="index.html"><li class="menu-item">summer</li></a>
-          <a href="index.html"><li class="menu-item">autumn</li></a>
-          <a href="index.html"><li class="menu-item">winter</li></a><br /><br />
-        </ul>
-      </ul>
-      </div> <!--span2-->
+
+
+
       <!-- recipe content -->
       <div class="span10">
-        <h1 class='indent'><%= @recipe.recipe_name %></h1>
+        <h3 class='indent'><%= @recipe.recipe_name %></h3>
         <div class='recipe_img'>
           <% if @images.any?() %>
             <% @images.each() do |image| %>
-              <ul>
-                <img src='<%=image.url%>'>
-              </ul>
+              <img src='<%=image.url%>' width='<%=image.width%>'>
             <%end%>
           <%end%>
         </div>
-          <ul class="recipe-data">
-            <li><span class="recipe-data-header">Serves:</span><%= @recipe.servings %></li>
-            <li><span class="recipe-data-header">Source:</span><%= @recipe.source %></li>
-            <li><a href="dessert_lemoncurd_print.html"><img src="/printer_icon.gif" width="25px" height="25px" alt="print this recipe"></a></li>
-          </ul>
-
-          <p class="recipe-comment"><%= @recipe.comment %></p>
+      <br />
+        Servings:&nbsp;&nbsp;&nbsp;<%= @recipe.servings %><br />
+        Source:&nbsp;&nbsp;&nbsp;<%= @recipe.source %><br /><br />
+        <p class="recipe-comment"><%= @recipe.comment %></p>
 
           <div id="recipe-container">
             <h2>Ingredients</h2>
@@ -71,11 +27,12 @@
               </ul>
             <%end%>
             <h2>Instructions</h2>
-            <% @instructions.each() do |instruction| %>
-              <ul>
-                <li><%= instruction.instruction_name %></li>
-              </ul>
-            <%end%>
+            <ol>
+              <% @instructions.each() do |instruction| %>
+                <li><%= instruction.instruction_name %><br /></br /></li>
+
+              <%end%>
+            </ol>
 
           </div> <!--recipe-container-->
         </div> <!--span10-->

@@ -1,1 +1,0 @@
-Blogger = Ember.Application.create();
