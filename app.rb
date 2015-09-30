@@ -137,3 +137,12 @@ get('/recipe_ready/:id') do
   @images = @recipe.images
   erb(:recipe_ready)
 end
+
+get('/all_recipes/') do
+  @recipes = Recipe.all
+  erb(:all_recipes)
+end
+
+get('/menus/') do
+erb(:menus)
+end
