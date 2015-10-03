@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609005639) do
+ActiveRecord::Schema.define(version: 20151003025320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,6 @@ ActiveRecord::Schema.define(version: 20150609005639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "categories_recipes", id: false, force: :cascade do |t|
-    t.integer "recipe_id"
-    t.integer "category_id"
-  end
-
-  add_index "categories_recipes", ["category_id"], name: "index_categories_recipes_on_category_id", using: :btree
-  add_index "categories_recipes", ["recipe_id"], name: "index_categories_recipes_on_recipe_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "image_name"
@@ -55,6 +47,14 @@ ActiveRecord::Schema.define(version: 20150609005639) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "menus", force: :cascade do |t|
+    t.string   "menu_name"
+    t.string   "comment"
+    t.integer  "season_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string   "recipe_name"
     t.string   "source"
@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(version: 20150609005639) do
     t.string   "comment"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "category_id"
+    t.integer  "menu_id"
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.string   "season_name"
+    t.string   "date"
+    t.string   "quote_source"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

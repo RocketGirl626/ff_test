@@ -1,0 +1,27 @@
+<h2>Season:  <%=@season.season_name()%></h2>
+<p>Date:  <%=@season.date()%></p>
+<p>Quote Source:  <%=@season.quote_source()%></p>
+
+<h3>Add a Menu</h3>
+<div>
+  <form action='/menu_add' method='post'>
+    <input type='hidden' name='season_id'  value=<%= @season.id %>
+    <div class='form-group'>
+      <label for='menu_name'>Menu Name:</label>
+      <input id='menu_name' name='menu_name' type='text'>
+    </div>
+    <div class='form-group'>
+      <label for='comment'>Comment:</label>
+      <input id='comment' name='comment' type='text'>
+    </div>
+    <button type='submit' class='btn btn-default'>Add Recipe</button>
+  </form>
+
+  <h3>This Season's Recipes</h3>
+  <% @menus.each() do |menu| %>
+    <ul>
+      <li><a href='/menu/<%=menu.id()%>'> <%=menu.menu_name()%></a></li>
+    </ul>
+  <%end%>
+
+</div>

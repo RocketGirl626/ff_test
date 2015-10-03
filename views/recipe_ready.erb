@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row-fluid">
-  
+
 
 
 
@@ -20,13 +20,13 @@
         <p class="recipe-comment"><%= @recipe.comment %></p>
 
           <div id="recipe-container">
-            <h2>Ingredients</h2>
+            <h3>Ingredients</h3>
             <% @ingredients.each() do |ingredient| %>
               <ul>
                 <li><%= ingredient.ingredient_name %></li>
               </ul>
             <%end%>
-            <h2>Instructions</h2>
+            <h3>Instructions</h3>
             <ol>
               <% @instructions.each() do |instruction| %>
                 <li><%= instruction.instruction_name %><br /></br /></li>

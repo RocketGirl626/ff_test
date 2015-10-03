@@ -5,8 +5,58 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
   @recipes = Recipe.all
+  @categories = Category.all
+  @seasons = Season.all
   erb(:index)
 end
+
+
+post('/category_add/') do
+  @cat_name = params.fetch('cat_name')
+  Category.create({:cat_name => @cat_name})
+  @categories = Category.all()
+  @recipes = Recipe.all()
+  erb(:index)
+end
+
+get('/category/:id') do
+  @category = Category.find(params.fetch('id'))
+  @recipes = @category.recipes
+  erb(:category)
+end
+
+post('/season_add/') do
+  @seasons = Season.all
+  @categories = Category.all
+  @recipes = Recipe.all
+  @season_name = params.fetch('season_name')
+  @date = params.fetch('date')
+  @quote_source = params.fetch('quote_source')
+  Season.create({:season_name => @season_name, :date => @date, :quote_source => @quote_source})
+  erb(:index)
+end
+
+get('/season/:id') do
+  @season = Season.find(params.fetch('id'))
+  @menus = @season.menus
+  erb(:season)
+end
+
+post('/menu_add') do
+  @season = Season.find(params.fetch('season_id').to_i)
+  @menus = Menu.all
+  @menu_name = params.fetch('menu_name')
+  @comment = params.fetch('comment')
+  Menu.create({:menu_name => @menu_name, :comment => @comment, :season_id => @season.id})
+  erb(:season)
+end
+
+get('/menu/:id') do
+  @menu = Menu.find(params.fetch('id'))
+  @recipes = @menu.recipes
+  erb(:menu)
+end
+
 
 get('/images') do
   @images = Image.all
@@ -14,11 +64,13 @@ get('/images') do
 end
 
 post('/recipe_add') do
+  @categories = Category.all
+  @category = Category.find(params.fetch('cat_id').to_i)
   @recipe_name = params.fetch('recipe_name')
   @source = params.fetch('source')
   @servings = params.fetch('servings')
   @comment = params.fetch('comment')
-  @recipe = Recipe.create({:recipe_name => @recipe_name, :source => @source, :servings => @servings, :comment => @comment})
+  @recipe = Recipe.create({:recipe_name => @recipe_name, :source => @source, :servings => @servings, :comment => @comment, :cat_id => @category.id})
   @recipes = Recipe.all()
   erb(:index)
 end
@@ -144,5 +196,6 @@ get('/all_recipes/') do
 end
 
 get('/menus/') do
-erb(:menus)
+
+  erb(:menus)
 end

@@ -1,0 +1,40 @@
+<h2>Category:  <%=@category.cat_name()%></h2>
+<br /><br />
+
+<h3>Recipe Header</h3>
+<div>
+  <form action='/recipe_add' method='post'>
+    <input type='hidden' name='cat_id'  value=<%= @category.id %>
+    <div class='form-group'>
+      <label for='recipe_name'>Recipe Name:</label>
+      <input id='recipe_name' name='recipe_name' type='text'>
+    </div>
+    <div class='form-group'>
+      <label for='source'>Recipe Source:</label>
+      <input id='source' name='source' type='text'>
+    </div>
+    <div class='form-group'>
+      <label for='servings'>Number of Servings</label>
+      <input id='servings' name='servings' type='text'>
+    </div>
+    <div class='form-group'>
+      <label for='comment'>Comment:</label>
+      <input id='comment' name='comment' type='text'>
+    </div>
+    <button type='submit' class='btn btn-default'>Add Recipe</button>
+  </form>
+</div>
+
+<div>
+  <h3> <%=@category.cat_name()%> Recipes</h3>
+
+  <% if @recipes.any?() %>
+  <% @recipes.each() do |recipe| %>
+    <ul>
+        <li><a href='/recipe/<%=recipe.id()%>'> <%=recipe.recipe_name()%></a></li>
+    </ul>
+      <%end%>
+  <%else %>
+    <p> You have no recipes!</p>
+  <%end%>
+</div>
