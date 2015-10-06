@@ -1,0 +1,25 @@
+<h3><%=@season.season_name()%>  |  <%=@season.date()%></h3>
+<%=@season.quote_source%>
+<br /><br />
+<hr>
+<br /><br />
+
+<% @menus.each() do |menu| %>
+    <div class="container-fluid"> <!-- If Needed Left and Right Padding in 'md' and 'lg' screen means use container class -->
+      <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src='<%=menu.url%>' width='<%=menu.width%>'>
+            <a href="#">&nbsp; &nbsp; &nbsp;</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+
+          </div>
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <h4><a href='/menu/<%=menu.id()%>'><%= menu.menu_name %></a></h4>
+            <blockquote><%= menu.comment %></blockquote>
+            <p><%= menu.quote_source %>
+          </div>
+      </div>
+      <hr>
+    </div>
+<%end%>

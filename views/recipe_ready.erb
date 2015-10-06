@@ -7,6 +7,7 @@
       <!-- recipe content -->
       <div class="span10">
         <h3 class='indent'><%= @recipe.recipe_name %></h3>
+        <hr><br />
         <div class='recipe_img'>
           <% if @images.any?() %>
             <% @images.each() do |image| %>
@@ -21,12 +22,14 @@
 
           <div id="recipe-container">
             <h3>Ingredients</h3>
+            <hr>
             <% @ingredients.each() do |ingredient| %>
               <ul>
                 <li><%= ingredient.ingredient_name %></li>
               </ul>
             <%end%>
             <h3>Instructions</h3>
+            <hr>
             <ol>
               <% @instructions.each() do |instruction| %>
                 <li><%= instruction.instruction_name %><br /></br /></li>
@@ -37,3 +40,4 @@
           </div> <!--recipe-container-->
         </div> <!--span10-->
    </div> <!--row-fluid-->
+ </div>

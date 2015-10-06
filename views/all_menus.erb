@@ -1,0 +1,12 @@
+
+<h3>All Menus</h3>
+
+<% if @seasons.any?() %>
+<% @seasons.each() do |season| %>
+  <ul>
+      <li><a href='/menu_ready/<%=season.id()%>'> <%=season.season_name()%></a>  |  <%=season.date()%></li>
+  </ul>
+    <%end%>
+<%else %>
+  <p> You have no menus!</p>
+<%end%>

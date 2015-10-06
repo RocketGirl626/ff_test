@@ -10,10 +10,20 @@ get('/') do
   erb(:index)
 end
 
+get('/all_recipes/') do
+  @recipes = Recipe.all
+  erb(:all_recipes)
+end
+
+get('/all_menus/') do
+  @seasons = Season.all
+  erb(:all_menus)
+end
 
 post('/category_add/') do
   @cat_name = params.fetch('cat_name')
   Category.create({:cat_name => @cat_name})
+  @seasons = Season.all
   @categories = Category.all()
   @recipes = Recipe.all()
   erb(:index)
@@ -57,6 +67,17 @@ get('/menu/:id') do
   erb(:menu)
 end
 
+get('/menu_ready/:id') do
+  @season = Season.find(params.fetch('id'))
+  @menus = @season.menus
+  erb(:menu_ready)
+end
+
+get('/menu_view/:id') do
+  @menu = Menu.find(params.fetch('id'))
+  @recipes = @menu.recipes
+  erb(:menu_view)
+end
 
 get('/images') do
   @images = Image.all
@@ -75,12 +96,32 @@ post('/recipe_add') do
   erb(:index)
 end
 
+post('/recipe_add_menu') do
+  @menus = Menu.all
+  @menu = Menu.find(params.fetch('menu_id').to_i)
+  @recipe_name = params.fetch('recipe_name')
+  @source = params.fetch('source')
+  @servings = params.fetch('servings')
+  @comment = params.fetch('comment')
+  @recipe = Recipe.create({:recipe_name => @recipe_name, :source => @source, :servings => @servings, :comment => @comment, :menu_id => @menu.id})
+  @recipes = Recipe.all()
+  erb(:menu)
+end
+
 get('/recipe/:id') do
   @recipe = Recipe.find(params.fetch('id'))
   @ingredients = @recipe.ingredients
   @instructions = @recipe.instructions
   @images = @recipe.images
   erb(:recipe)
+end
+
+get('/recipe_ready/:id') do
+  @recipe = Recipe.find(params.fetch('id'))
+  @ingredients = @recipe.ingredients
+  @instructions = @recipe.instructions
+  @images = @recipe.images
+  erb(:recipe_ready)
 end
 
 patch('/recipe_name_update/:id') do
@@ -188,14 +229,4 @@ get('/recipe_ready/:id') do
   @instructions = @recipe.instructions
   @images = @recipe.images
   erb(:recipe_ready)
-end
-
-get('/all_recipes/') do
-  @recipes = Recipe.all
-  erb(:all_recipes)
-end
-
-get('/menus/') do
-
-  erb(:menus)
 end

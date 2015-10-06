@@ -1,0 +1,29 @@
+
+
+
+    <div class="container-fluid"> <!-- If Needed Left and Right Padding in 'md' and 'lg' screen means use container class -->
+      <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src='<%= @menu.url%>' width='<%= @menu.width%>'>
+            <br /><br /><br /><br />
+            <% if @recipes.any?() %>
+            <% @recipes.each() do |recipe| %>
+              <ul>
+                  <li><a href='/recipe_ready/<%=recipe.id()%>'> <%=recipe.recipe_name()%></a></li>
+              </ul>
+                <%end%>
+            <%else %>
+              <p> You have no recipes!</p>
+            <%end%>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+
+          </div>
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <h3><%= @menu.menu_name %></h3>
+            <blockquote><%= @menu.comment %></blockquote>
+            <p><%= @menu.quote_source %>
+          </div>
+      </div>
+      <hr>
+    </div>

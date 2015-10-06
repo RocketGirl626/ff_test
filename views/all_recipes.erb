@@ -4,7 +4,7 @@
 <% if @recipes.any?() %>
 <% @recipes.each() do |recipe| %>
   <ul>
-      <li><a href='/recipe/<%=recipe.id()%>'> <%=recipe.recipe_name()%></a></li>
+      <li><a href='/recipe_ready/<%=recipe.id()%>'> <%=recipe.recipe_name()%></a></li>
   </ul>
     <%end%>
 <%else %>
